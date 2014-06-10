@@ -1,6 +1,6 @@
 OmegaPy
 =====
-OmegaPy is a small but complete Python interface to Omegle.
+OmegaPy is a small but complete (MIT licensed) Python interface to Omegle.
 
  * Supports Classic, Interests, and Spy mode.
  * Simple programmable behavior using event handlers.
