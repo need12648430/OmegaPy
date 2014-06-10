@@ -18,7 +18,7 @@ class OmegleHandler:
 		""" called when common interests are found """
 		pass
 	
-	def on_spy_question(self, question):
+	def on_question(self, question):
 		""" called when you receive the spy's question """
 		pass
 	

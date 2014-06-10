@@ -27,29 +27,34 @@ Simple usage example:
 
 Spy mode:
 
-    class QuestionDisplay(OmegleHandler):
-        def on_connect(self):
-            print "connected"
-        
-        def on_spy_question(self, question):
-            print question
-    
-    question_dis = QuestionDisplay()
-    omegle = OmegleChat(question_dis)
-    omegle.start_chat(OmegleChat.Spy)
+	from Omegle import *
+
+	class QuestionDisplay(OmegleHandler):
+		def on_connect(self):
+			print "connected"
+
+		def on_question(self, question):
+			print question
+
+	question_dis = QuestionDisplay()
+	omegle = OmegleChat(question_dis)
+	omegle.start_chat(OmegleChat.Spy)
 
 Interests mode:
 
-    class InterestsDisplay(OmegleHandler):
-        def on_connect(self):
-            print "connected"
-        
-        # called when common interests were found
-        def on_interests(self, interests):
-            for i in interests:
-                print i
-    
-    interests_dis = InterestsDisplay()
-    omegle = OmegleChat(interests_dis)
-    omegle.add_interests(["omegle", "github", "python", "beer"])
-    omegle.start_chat(OmegleChat.Interests)
+	from Omegle import *
+	
+	class InterestsDisplay(OmegleHandler):
+		def on_connect(self):
+			print "connected"
+		
+		# called when common interests were found
+		def on_interests(self, interests):
+			print "shared interests:"
+			for i in interests:
+				print "  " + i
+
+	interests_dis = InterestsDisplay()
+	omegle = OmegleChat(interests_dis)
+	omegle.add_interests(["omegle", "github", "python", "beer"])
+	omegle.start_chat(OmegleChat.Interests)
